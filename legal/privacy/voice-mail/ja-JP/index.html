@@ -5,38 +5,70 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="/css/basic.css">
-    <title>プライバシーポリシー</title>
+    <title>Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約</title>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@motchie" />
-    <meta name="twitter:title" content="プライバシーポリシー/利用規約" />
-    <meta name="twitter:description" content="Alexaスキル「音声メール」のプライバシーポリシーと利用規約です。" />
+    <meta name="twitter:title" content="Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約" />
+    <meta name="twitter:description" content="Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約です。" />
 
-    <meta property="og:title" content="プライバシーポリシー/利用規約" />
+    <meta property="og:title" content="Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://alexa-skill.motchie.com/legal/privacy/voice-mail/ja-JP/index.html" />
     <meta property="og:site_name" content="motchie.com" />
-    <meta property="og:description" content="Alexaスキル「音声メール」のプライバシーポリシーと利用規約です。" />
+    <meta property="og:description" content="Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約です。" />
 </head>
 <header>
     motchie.com
 </header>
 <main>
-    <h1>Alexaスキル「音声メール」のプライバシーポリシーおよび利用規約</h1>
+    <h1>Alexaスキル「音声メールM」のプライバシーポリシーおよび利用規約</h1>
     <h2>基本方針</h2>
-    <p>Alexaスキル「音声メール」(以下、「本スキル」)は、ご利用者の個人情報(プライバシー情報)の保護を重要な問題と捉えています。</p>
+    <p>Alexaスキル「音声メールM」(以下、「本スキル」)は、ご利用者の個人情報(プライバシー情報)の保護を重要な問題と捉えています。</p>
     <p>本プライバシーポリシーおよび利用規約は、本スキルでどのような情報を収集、利用、管理しているかを記載しています。</p>
     <p>本スキルの仕様、本プライバシーポリシーおよび利用規約の内容をご承諾いただけない場合は、本スキルの利用はご遠慮ください。</p>
     <h2>本スキルで利用する情報</h2>
     <p>本スキルでは、個人を特定できない情報を用いてメールを取得しています。</p>
     <p>本スキルではメールの取得に<a href="https://developer.microsoft.com/ja-jp/graph">Microsoft Graph</a>を用いており、スキルご利用者様に動作に必要な最小限の権限を許可いただき、
-        <a href="https://developer.microsoft.com/ja-jp/graph/docs/concepts/auth_overview">ドキュメントに示された手順で</a>サービスにアクセスするための一時トークンを取得しています。このトークンは30分程度で無効になります。</p>
+        <a href="https://developer.microsoft.com/ja-jp/graph/docs/concepts/auth_overview">ドキュメントに示された手順で</a>サービスにアクセスするための一時トークンを取得しています。このトークンは1時間で無効になります。1時間経過後にAlexa端末からリクエストがあった場合は、<a href="https://developer.microsoft.com/ja-jp/graph/docs/concepts/auth_v2_user#5-use-the-refresh-token-to-get-a-new-access-token">更新トークン</a>を取得しています。</p>
+    <p>なお、このように取得したアクセストークンなどを、Alexa端末や外部ストレージなどに保存することは一切行っていません。</p>
+    <h2>本スキルで利用するMicrosoft Graphのアクセス許可について</h2>
+    <p>本スキルはMicrosoft Graph、端的にはご利用のMicrosoftオンラインサービスのメールボックスに対して、以下のアクセス許可を求めています。この点についてはAlexa Appでのアカウントリンク時にもご確認いただけます。</p>
+    <h3>アクセス許可の取得のために必要なアクセス許可</h3>
+    <ol>
+        <li>User.Read</li>
+        <li>offline_access</li>
+    </ol>
+    <h3>メールの取得に関連したアクセス許可</h3>
+    <dl>
+        <dt>Mail.ReadWrite</dt>
+        <dd>Mail.Readはメールの取得のため。Mail.Writeは、将来実装する、メールの既読フラグをセットするため。</dd>
+        <dt>Mail.Send</dt>
+        <dd>将来実装する、メールの返信を含むメール送信のため</dd>
+    </dl>
+    <p>Mail.WriteやMail.Sendは現状実装されておらず、現時点では過剰なアクセス許可となっておりますが、将来本スキルをバージョンアップしてこれらの機能を実装した場合、ユーザーの皆様にはアカウントリンクを再度実行していただく必要があります。この手間を軽減するため、最初から実装予定のアクセス許可もいただく方針としています。</p>
+    <h2>本スキルで利用している情報</h2>
+    <p>本スキルでは、アカウントリンクの際に許可いただいたアクセス許可を用いてメールを取得し、そのメールの以下の情報だけを取得して読み上げています。その後、その情報は破棄しています。</p>
+    <ul>
+        <li>メッセージID</li>
+        <li>送信元</li>
+        <li>件名</li>
+        <li>プレビュー用本文</li>
+        <li>受信日時</li>
+    </ul>
     <h2>本スキルで利用しない情報</h2>
     <p>本スキルでは、以下の情報は取得・利用いたしません。</p>
+    <h3>Alexa Appから取得可能なもの</h3>
+    <dl>
+        <dt>デバイスアドレス</dt>
+        <dd>Alexa Appで設定可能な、デバイスの所在地情報</dd>
+        <dt>リストの読み書き権限</dt>
+        <dd>Alexa Appに蓄積される、買い物リストとToDoリストの情報</dd>
+    </dl>
+    <h3>その他、一般的な個人情報</h3>
     <ul>
         <li>氏名</li>
         <li>住所</li>
         <li>電話番号</li>
-        <li>メールアドレス</li>
         <li>クレジットカード番号</li>
         <li>社会保障番号</li>
         <li>Amazon Alexaアプリ内に設定したその他の情報</li>
