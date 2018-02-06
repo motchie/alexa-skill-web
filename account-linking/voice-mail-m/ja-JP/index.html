@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="/css/basic.css">
+    <title>Alexaスキル「音声メールM」のアカウントリンク</title>
+</head>
+<header>
+    motchie.com
+</header>
+<main>
+    <h1>Alexaスキル「音声メールM」のアカウントリンク</h1>
+    <p>アカウントリンクを有効にするには、次のボタンをクリックしてください。</p>
+    <p>Microsoftオンラインサービスのサインイン画面に移動します。</p>
+    <form>
+        <button type="button" id="login" onclick="accountLink();" onkeypress="accountLink();">Microsoftアカウント / 職場または学校アカウントでサインイン</button>
+    </form>
+</main>
+<footer>
+    <p lang="en">© 2018 Toru Motchie MOCHIDA</p>
+</footer>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+    function accountLink() {
+        const original = 'https://alexa.amazon.co.jp/spa/index.html';
+        let referrer = document.referrer;
+
+        if (referrer === original) {
+            let urlParams = new URLSearchParams(window.location.search);
+            let param = urlParams.toString();
+
+            location = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?' + param;
+        } else {
+            location = '/';
+        }
+    }
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-67998464-3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-67998464-3');
+</script>
+</body>
+
+</html>
