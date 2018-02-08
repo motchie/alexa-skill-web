@@ -24,17 +24,10 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script>
     function accountLink() {
-        const original = 'https://alexa.amazon.co.jp/spa/index.html';
-        let referrer = document.referrer;
+        let urlParams = new URLSearchParams(window.location.search);
+        let param = urlParams.toString();
 
-        if (referrer === original) {
-            let urlParams = new URLSearchParams(window.location.search);
-            let param = urlParams.toString();
-
-            location = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?' + param;
-        } else {
-            location = '/';
-        }
+        location = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?' + param;
     }
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67998464-3"></script>
